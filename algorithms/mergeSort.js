@@ -13,7 +13,7 @@ async function merge(arr, left, mid, right){
         right_arr[j] = arr[mid + 1 + j];
     }
 
-    let i, j = 0;
+    let i = 0, j = 0;
     let k = left;
 
     while (i < num1 && j < num2){
