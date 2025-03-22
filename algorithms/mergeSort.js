@@ -26,6 +26,7 @@ async function merge(arr, left, mid, right){
             j++;
         }
         k++;
+    }
 
     while (i < num1){
         arr[k] = left_arr[i];
@@ -38,7 +39,6 @@ async function merge(arr, left, mid, right){
         j++;
         k++;
     }
-}
 }
 
 function mergeSort(arr, left, right){
