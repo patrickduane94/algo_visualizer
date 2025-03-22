@@ -12,12 +12,13 @@
     <div class="controls">
         <label for="algorithm">Choose Algorithm:</label>
         <select id="algorithm">
+            <option value=""></option>
             <option value="bubbleSort">Bubble Sort</option>
             <option value="quickSort">Quick Sort</option>
             <option value="mergeSort">Merge Sort</option>
         </select>
-        <button onclick="generateArray()">Generate New Array</button>
-        <button onclick="startSorting()">Start Sorting</button>
+        <button id="generate" onclick="generateArray()">Generate New Array</button>
+        <button id="start" onclick="startSorting()">Start Sorting</button>
     </div>
 
     <div id="array-container"></div>

@@ -1,4 +1,5 @@
 async function merge(arr, left, mid, right){
+    const bars = document.getElementsByClassName("bar");
     const num1 = mid - left + 1;
     const num2 = right - mid;
 
@@ -25,29 +26,41 @@ async function merge(arr, left, mid, right){
             arr[k] = right_arr[j];
             j++;
         }
+        bars[k].style.height = `${arr[k] * 3}px`;
+        bars[k].style.backgroundColor = "red";
+        await sleep(150);
+        bars[k].style.backgroundColor = "steelblue";
         k++;
     }
 
     while (i < num1){
         arr[k] = left_arr[i];
+        bars[k].style.height = `${arr[k] * 3}px`;
+        bars[k].style.backgroundColor = "red";
+        await sleep(150);
+        bars[k].style.backgroundColor = "steelblue";
         i++;
         k++;
     }
 
     while (j < num2){
         arr[k] = right_arr[j];
+        bars[k].style.height = `${arr[k] * 3}px`;
+        bars[k].style.backgroundColor = "red";
+        await sleep(150);
+        bars[k].style.backgroundColor = "steelblue";
         j++;
         k++;
     }
 }
 
-function mergeSort(arr, left, right){
+async function mergeSort(arr, left, right){
     if (left >= right){
         return;
     }
 
     const middle = Math.floor(left + (right - left) / 2);
-    mergeSort(arr, left, middle);
-    mergeSort(arr, middle + 1, right);
-    merge(arr, left, middle, right);
+    await mergeSort(arr, left, middle);
+    await mergeSort(arr, middle + 1, right);
+    await merge(arr, left, middle, right);
 }

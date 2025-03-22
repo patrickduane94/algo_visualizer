@@ -1,15 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Roboto;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #1e1414;
 }
 
 h1 {
-    color: #333;
+    color: whitesmoke;
 }
 
 .controls {
     margin-bottom: 20px;
+    color: whitesmoke;
 }
 
 button {

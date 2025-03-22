@@ -1,7 +1,13 @@
 let array = [];
+let sorted = false;
+const choice = document.getElementById("algorithm");
 const container = document.getElementById("array-container");
+const startBtn = document.getElementById("start");
+const generateBtn = document.getElementById("generate");
 
 function generateArray() {
+    sorted = false;
+    startBtn.disabled = (choice.value === ""); 
     array = [];
     container.innerHTML = "";
     for (let i = 0; i < 20; i++) {
@@ -19,7 +25,11 @@ function sleep(ms) {
 }
 
 async function startSorting() {
-    const selectedAlgo = document.getElementById("algorithm").value;
+    generateBtn.disabled = true;
+    startBtn.disabled = true;
+    choice.disabled = true;
+
+    const selectedAlgo = choice.value;
     if (selectedAlgo === "bubbleSort") {
         await bubbleSort(array);
     } else if (selectedAlgo === "quickSort") {
@@ -27,6 +37,14 @@ async function startSorting() {
     } else if (selectedAlgo === "mergeSort") {
         await mergeSort(array, 0, array.length - 1);
     }
+
+    sorted = true;
+    generateBtn.disabled = false;
+    choice.disabled = false;
 }
+
+choice.addEventListener("change", () => {
+    startBtn.disabled = (choice.value === "") || sorted; 
+});
 
 generateArray();
