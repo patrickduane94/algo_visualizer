@@ -46,7 +46,7 @@ function mergeSort(arr, left, right){
         return;
     }
 
-    const middle = Math.floor(left + (left - right) / 2);
+    const middle = Math.floor(left + (right - left) / 2);
     mergeSort(arr, left, middle);
     mergeSort(arr, middle + 1, right);
     merge(arr, left, middle, right);
