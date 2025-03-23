@@ -16,9 +16,20 @@
             <option value="bubbleSort">Bubble Sort</option>
             <option value="quickSort">Quick Sort</option>
             <option value="mergeSort">Merge Sort</option>
+            <option value="selectionSort">Selection Sort</option>
+            <option value="insertionSort">Insertion Sort</option>
+            <option value="heapSort">Heap Sort</option>
         </select>
         <button id="generate" onclick="generateArray()">Generate New Array</button>
         <button id="start" onclick="startSorting()">Start Sorting</button>
+    </div>
+
+    <div id="description">
+        <p id="bubble" class="algo-desc">Bubble Sort is a simple sorting algorithm which swaps adjacent elements, "bubbling" the greatest value stored in the array to the last available index on each pass. The average and worst case time complexity is O(n²), and the best case time complexity is O(n) in the case that the array is already sorted. The space complexity is O(1) because the sorting is in place.</p>
+    
+        <p id="quick" class="algo-desc">Quick Sort uses a pivot-based partitioning algorithm, dividing the array into subarrays and recursively sorting them. Average and best case time complexity is O(n log n), and worst case is O(n²). Although he sorting is in place, the space complexity is O(log n) due to recursion storing function call information on the call stack.</p>
+        
+        <p id="merge" class="algo-desc">Merge Sort is a divide-and-conquer algorithm that splits an array into subarrays and then merges them in sorted order. Time complexity is O(n log n) in all cases, and space complexity is O(n) due to the creation of n subarrays.</p>
     </div>
 
     <div id="array-container"></div>

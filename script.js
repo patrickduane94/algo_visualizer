@@ -45,6 +45,17 @@ async function startSorting() {
 
 choice.addEventListener("change", () => {
     startBtn.disabled = (choice.value === "") || sorted; 
+
+    const descriptions = document.querySelectorAll(".algo-desc");
+    descriptions.forEach(desc => desc.style.display = "none");
+
+    if (choice.value === "bubbleSort") {
+        document.getElementById("bubble").style.display = "block";
+    } else if (choice.value === "quickSort") {
+        document.getElementById("quick").style.display = "block";
+    } else if (choice.value === "mergeSort") {
+        document.getElementById("merge").style.display = "block";
+    }
 });
 
 generateArray();

@@ -31,8 +31,18 @@ button {
     background: white;
 }
 
+#description{
+    margin: auto;
+    width: 60%;
+    color: whitesmoke;
+}
+
 .bar {
     width: 20px;
     margin: 2px;
     background-color: steelblue;
+}
+
+.algo-desc {
+    display: none;
 }
